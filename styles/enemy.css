@@ -1,0 +1,34 @@
+ 
+/* ---- Enemies (classes set by enemies.js; --hp is 0-100) ---- */
+.window .tile.enemy {
+    position: relative;
+    background-color: #8b1a1a;           /* swap for your enemy art */
+}
+.window .tile.enemy::before {            /* health bar */
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    height: 14%;
+    width: calc(var(--hp, 100) * 1%);
+    background: #ffd54a;
+}
+.window .tile.enemy-windup {             /* warning before a strike */
+    animation: enemy-windup 0.45s ease-in forwards;
+}
+@keyframes enemy-windup {
+    from { filter: brightness(1); transform: scale(1); }
+    to   { filter: brightness(1.8); transform: scale(1.12); }
+}
+.window .tile.enemy-hit { filter: brightness(2.2) saturate(0.4); }
+ 
+/* ---- Player hit flash and HUD ---- */
+.window .tile.player-hit { filter: brightness(2) hue-rotate(-40deg); }
+ 
+#hud {
+    position: fixed;
+    top: 8px; left: 12px;
+    font: bold 1.6rem sans-serif;
+    color: #ff4d4d;
+    text-shadow: 0 1px 2px #000;
+    z-index: 5;
+}

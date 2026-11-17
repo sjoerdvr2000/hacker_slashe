@@ -1,0 +1,9 @@
+ body { font-family: sans-serif; padding: 20px; }
+
+ #drop-zone {
+        border: 2px dashed #888; padding: 30px; margin-bottom: 12px;
+         text-align: center;
+}
+#drop-zone.hover { background: #eef; border-color: #44f; }
+#preview { image-rendering: pixelated; border: 1px solid #ccc; max-width: 100%; }
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Map Compiler</title>
+    <link rel="stylesheet" href="styles/compiler.css">
+</head>
+
+<body>
+    <h1>Map Compiler</h1>
+
+    <div id="drop-zone">
+        Drop a PNG here or
+        <input type="file" id="file-input" accept="image/png">
+    </div>
+
+    <p id="info">No image loaded.</p>
+    <canvas id="preview"></canvas>
+
+    <button id="export-button" disabled>Export map</button>
+
+    <!-- Order matters: dependencies first, compiler.js last (it uses all the others) -->
+    <script src="js/tile_config.js"></script>
+    <script src="js/image_loader.js"></script>
+    <script src="js/pixel_parser.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/exporter.js"></script>
+    <script src="js/compiler.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/player.css">
+    <link rel="stylesheet" href="styles/enemy.css">
+</head>
+
+
+
+<body>
+    <div class="window"></div>
+
+
+    <p>WASD to move, Q to block and space to attack. Press space while blocking to preform a push attack this attack drains a lot of stamina</p>
+    
+    
+    <script src="actors/pc/player_behavior.js"></script>
+    <script src="actors/pc/player_stats_&_inventory.js"></script>
+    <script src="actors/npc/enemies.js"></script>
+    
+    <!--Map scripts place them in the order the player should visit them the top most script is the firt map the player encounters-->
+
+    <script src="maps/levels/map1.js"></script>
+    <script src="maps/levels/map2.js"></script> 
+    
+    <script src="js/engine.js"></script>
+
+
+
+</body>
+
+
+
+
+
+</html>

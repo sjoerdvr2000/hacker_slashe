@@ -1,0 +1,55 @@
+body{
+    display: flex;
+    justify-content: center;
+    background: #222;
+}
+
+p{
+    position: fixed;
+  top: 50px;
+  left: 12px;
+  
+  height: 10px;
+  z-index: 5;
+  color: white;
+  font-size: 1.5em;
+  width: 10em;
+}
+
+/* Grid sizing: engine.js sets --cols, --rows and --tile-size on .window,
+   and the camera size on .camera. Remove any fixed grid-template-columns /
+   tile width / height / margin you had on .window before. */
+ 
+.camera {                /* created by engine.js around .window; clips the map to the view */
+    overflow: hidden;
+    margin: 16px auto;   /* keep in sync with GRID_MARGIN in engine.js */
+}
+
+.window {
+    display: grid;
+    grid-template-columns: repeat(var(--cols, 20), var(--tile-size, 32px));
+    grid-template-rows:    repeat(var(--rows, 20),  var(--tile-size, 32px));
+    width: max-content;   /* shrink-wrap the grid to the map */
+    margin: 16px auto;    /* keep in sync with GRID_MARGIN in engine.js */
+}
+ 
+.tile {
+    width:  var(--tile-size, 32px);
+    height: var(--tile-size, 32px);
+    box-sizing: border-box;
+}
+
+/* Terrain */
+.void {
+    background: #333;
+}
+
+.floor {
+    background: #888;
+}
+
+.wall {
+    background: #654321;
+}
+
+ 
